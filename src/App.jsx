@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Menu />
+      <Menu /> <p>para testar o menu</p>
       <h1>Projeto Final M5 - Turma 3</h1>
     </>
   )
