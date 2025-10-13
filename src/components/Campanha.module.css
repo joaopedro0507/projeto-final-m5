@@ -1,0 +1,70 @@
+:root {
+  /* 🎨 Paleta de cores - Preto, Vermelho e Marrom */
+  --corPrincipal: #161616;   /* Preto suave - fundo e textos principais */
+  --corSecundaria: #8B1E3F;  /* Vermelho bordô - botões, títulos, destaques */
+  --corTerciaria: #6B4C3B;   /* Marrom café - cartões e bordas */
+  --corBase: #FAF6F2;        /* Creme - fundo claro ou contraste */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--corPrincipal);
+  color: var(--corBase);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--corTerciaria);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--corBase);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  color: var(--corSecundaria);
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+  margin: 8px 0;
+  color: var(--corBase);
+}
+
+.year {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--corSecundaria);
+}
+
+.impact {
+  font-size: 13px;
+  color: var(--corBase);
+}
+
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: var(--corSecundaria);
+}
