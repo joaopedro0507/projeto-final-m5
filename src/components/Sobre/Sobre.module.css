@@ -20,12 +20,10 @@
 
 /* Container central */
 .container {
-  max-width: 1200px;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
@@ -75,7 +73,8 @@
 
 .imagem {
   width: 100%;
-  max-width: 460px;
+  width: 700px;
+  height: 500px;
   border-radius: 24px;
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
