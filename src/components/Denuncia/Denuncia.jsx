@@ -26,20 +26,18 @@ export default function Denuncia() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.mainTitle}>Dados sobre Denúncias de Racismo</h1>
+      <h1 className={styles.mainTitle}>📊 Dados sobre Denúncias de Racismo</h1>
       <div className={styles.container}>
         {loading ? (
-          <div className={styles.loaderContainer}>
-            <p className={styles.loading}>Carregando dados...</p>
-          </div>
+          <div className={styles.loader}></div>
         ) : error ? (
           <p className={styles.error}>{error}</p>
         ) : denuncias.length > 0 ? (
           denuncias.map((item) => (
             <div key={item.id} className={styles.card}>
               <h2 className={styles.title}>Denúncia em {item.estado}</h2>
-              <p className={styles.description}>Detalhe: {item.descricao}</p>
-              <p className={styles.state}>Estado: {item.estado}</p>
+              <p className={styles.description}>{item.descricao}</p>
+              <span className={styles.state}>🗺 Estado: {item.estado}</span>
             </div>
           ))
         ) : (
