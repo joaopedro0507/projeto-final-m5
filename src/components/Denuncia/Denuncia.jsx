@@ -25,7 +25,7 @@ export default function Denuncia() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="denuncia">
       <h1 className={styles.mainTitle}>📊 Dados sobre Denúncias de Racismo</h1>
       <div className={styles.container}>
         {loading ? (

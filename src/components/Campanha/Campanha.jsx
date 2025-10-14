@@ -23,7 +23,7 @@ export default function Campanha() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="campanha">
       <h1 className={styles.mainTitle}>Campanhas sobre o Racismo Mundial</h1>
       <div className={styles.container}>
         {loading ? (

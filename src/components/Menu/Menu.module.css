@@ -1,91 +1,76 @@
-:root {
-  --corPrincipal: #241510;   /* Preto suave */
-  --corSecundaria: #8B1E3F;  /* Vermelho bordô */
-  --corTerciaria: #6B4C3B;   /* Marrom café */
-  --corBase: #FAF6F2;        /* Creme (texto claro) */
-}
+/* Menu.module.css */
 
-/* ======= MENU ======= */
-nav {
-  width: 100%;
-  background: linear-gradient(160deg, #1C1A17 80%, #241510);
-  padding: 18px 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+/* Navbar */
+.nav {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centraliza horizontalmente */
   align-items: center;
-  border-bottom: 2px solid var(--corTerciaria);
-  position: sticky;
+  background-color: #161616; /* cor principal */
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
   top: 0;
+  left: 0;
   z-index: 1000;
-  backdrop-filter: blur(6px);
-  animation: fadeInDown 0.8s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-ul {
+/* Lista de links */
+.ul {
   list-style: none;
   display: flex;
-  gap: 48px;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
-li {
-  color: var(--corBase);
-  font-size: 1.1rem;
+/* Item da lista */
+.li {
+  /* Pode adicionar estilos se quiser */
+}
+
+/* Link */
+.link {
+  color: #FAF6F2; /* texto claro */
+  text-decoration: none;
   font-weight: 500;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  transition: color 0.3s;
 }
 
-/* Linha animada embaixo do item ao passar o mouse */
-li::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--corSecundaria);
-  transition: width 0.3s ease;
+.link:hover {
+  color: #8B1E3F; /* cor secundária ao passar o mouse */
 }
 
-li:hover {
-  color: var(--corSecundaria);
-  transform: translateY(-2px);
-}
-
-li:hover::after {
-  width: 100%;
-}
-
-/* Animação suave de entrada */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsivo */
-@media (max-width: 700px) {
-  nav {
-    padding: 14px 0;
-  }
-
-  ul {
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .ul {
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 1rem;
+    background-color: #161616;
+    position: absolute;
+    top: 60px; /* altura da navbar */
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
   }
 
-  li {
-    font-size: 1rem;
+  /* Para abrir o menu, adicione a classe open ao ul no React */
+  .ul.open {
+    max-height: 300px; /* ajuste conforme número de links */
+  }
+
+  .li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
   }
 }
+

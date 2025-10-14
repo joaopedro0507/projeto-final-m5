@@ -121,3 +121,10 @@
     font-size: 1.4rem;
   }
 }
+.footer ul,
+.footer ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+

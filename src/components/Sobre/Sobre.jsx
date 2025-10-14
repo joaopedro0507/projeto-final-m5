@@ -4,7 +4,7 @@ import campanhaImg from "../../assets/istockphoto-1297234871-612x612.jpg";
 
 export default function Sobre() {
   return (
-    <section className={styles.sobre}>
+    <section className={styles.sobre} id="sobre">
       <div className={styles.container}>
         <div className={styles.texto}>
           <h1>Sobre a Campanha</h1>
