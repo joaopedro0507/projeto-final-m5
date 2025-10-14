@@ -1,0 +1,37 @@
+.sobre {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+  background-color: #3e2723; 
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sobre h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #d32f2f; 
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.assinatura {
+  margin-top: 25px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.imagem {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid #d32f2f;
+}
