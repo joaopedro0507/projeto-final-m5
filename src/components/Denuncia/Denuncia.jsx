@@ -1,38 +1,49 @@
 import { useState, useEffect } from 'react';
 import styles from './Denuncia.module.css';
-export default function Racismo() {
-  // useState
-  const [racisms, setRacisms] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  // useEffect
+export default function Denuncia() {
+  const [denuncias, setDenuncias] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     fetch("https://api-projeto-final-m4.onrender.com/denuncias")
-      .then((response) => response.json())
-      .then((data) => { setRacisms(data.denuncias) })
-      .catch((error) => console.error("Erro ao buscar dados:", error))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Falha na resposta do servidor.');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setDenuncias(data.denuncias);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar dados:", error);
+        setError("Não foi possível carregar as denúncias. Tente novamente mais tarde.");
+      })
       .finally(() => setLoading(false));
   }, []);
 
   return (
-    <main>
-      <h1>Denuncias sobre o Racismo Mundial</h1>
-      <div>
+    <main className={styles.main}>
+      <h1 className={styles.mainTitle}>Dados sobre Denúncias de Racismo</h1>
+      <div className={styles.container}>
         {loading ? (
           <div className={styles.loaderContainer}>
-            <div className={styles.loader}></div>
-            <p>Carregando dados sobre racismo...</p>
+            <p className={styles.loading}>Carregando dados...</p>
           </div>
-        ) : racisms.length > 0 ? (
-          racisms.map((item) => (
+        ) : error ? (
+          <p className={styles.error}>{error}</p>
+        ) : denuncias.length > 0 ? (
+          denuncias.map((item) => (
             <div key={item.id} className={styles.card}>
-              <h2 className={styles.title}>{item.nome}</h2>
-              <p className={styles.description}>{item.descricao}</p>
+              <h2 className={styles.title}>Denúncia em {item.estado}</h2>
+              <p className={styles.description}>Detalhe: {item.descricao}</p>
               <p className={styles.state}>Estado: {item.estado}</p>
             </div>
           ))
         ) : (
-          <p>Nenhum dado encontrado.</p>
+          <p className={styles.emptyMessage}>Nenhuma denúncia encontrada.</p>
         )}
       </div>
     </main>

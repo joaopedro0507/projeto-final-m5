@@ -1,70 +1,99 @@
 :root {
-  /* 🎨 Paleta de cores - Preto, Vermelho e Marrom */
-  --corPrincipal: #161616;   /* Preto suave - fundo e textos principais */
-  --corSecundaria: #8B1E3F;  /* Vermelho bordô - botões, títulos, destaques */
-  --corTerciaria: #6B4C3B;   /* Marrom café - cartões e bordas */
-  --corBase: #FAF6F2;        /* Creme - fundo claro ou contraste */
+  --corPrincipal: #161616;
+  --corSecundaria: #8B1E3F;
+  --corTerciaria: #6B4C3B;
+  --corBase: #FAF6F2;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--corPrincipal);
+  color: var(--corPrincipal);
+  padding: 92px;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
   color: var(--corBase);
-  min-height: 100vh;
-  padding: 20px;
+  border-bottom: 3px solid var(--corTerciaria);
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .card {
-  background-color: var(--corTerciaria);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: var(--corBase);
+  font-weight: bold;
+  background-color: var(--corTerciaria);
+  border: 1px solid var(--corTerciaria);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid var(--corSecundaria);
 }
 
 .title {
-  color: var(--corSecundaria);
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .description {
-  font-size: 14px;
-  margin: 8px 0;
-  color: var(--corBase);
+  font-size: 1rem;
+  margin: 10px 0;
+  flex-grow: 1;
 }
 
-.year {
-  font-size: 13px;
+.state {
+  font-size: 0.9rem;
   font-weight: bold;
-  color: var(--corSecundaria);
+  margin-top: 15px;
 }
 
-.impact {
-  font-size: 13px;
-  color: var(--corBase);
+.loading, .emptyMessage, .error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 500px;
 }
 
 .loading {
-  text-align: center;
-  font-size: 16px;
-  color: var(--corSecundaria);
+  color: var(--corPrincipal);
+  background-color: var(--corBase);
+  border: 2px solid var(--corTerciaria);
+}
+
+.error {
+  color: var(--corBase);
+  background-color: var(--corSecundaria);
+  border: 2px solid var(--corPrincipal);
+  font-weight: bold;
+}
+
+.emptyMessage {
+  color: var(--corPrincipal);
+  background-color: var(--corBase);
+  border: 1px solid var(--corTerciaria);
 }
