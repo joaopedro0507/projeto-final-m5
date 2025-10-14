@@ -1,16 +1,16 @@
-
-import './App.css'
-import Menu from './components/Menu.jsx'
+import Menu from './components/Menu.jsx';
+import Campanha from './components/Denuncia.jsx';
+import Denuncia from './components/Campanha.jsx';
+import './App.css';
 
 function App() {
-  
-
   return (
     <>
-      <Menu /> <p>para testar o menu</p>
-      <h1>Projeto Final M5 - Turma 3</h1>
+      <Menu />
+      <Denuncia />
+      <Campanha />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

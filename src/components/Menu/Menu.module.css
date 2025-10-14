@@ -1,0 +1,63 @@
+:root {
+  --corPrincipal: #161616;   /* Preto suave */
+  --corSecundaria: #8B1E3F;  /* Vermelho bordô */
+  --corTerciaria: #6B4C3B;   /* Marrom café */
+  --corBase: #FAF6F2;        /* Creme (texto claro) */
+}
+
+/* ======= MENU ======= */
+nav {
+  background-color: var(--corPrincipal);
+  padding: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--corTerciaria);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  color: var(--corBase);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Linha animada embaixo do item ao passar o mouse */
+li::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--corSecundaria);
+  transition: width 0.3s ease;
+}
+
+li:hover {
+  color: var(--corSecundaria);
+}
+
+li:hover::after {
+  width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
