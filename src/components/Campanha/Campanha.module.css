@@ -1,70 +1,219 @@
+/* 🌍 Paleta de Cores - Ancestralidade Africana */
 :root {
-  /* 🎨 Paleta de cores - Preto, Vermelho e Marrom */
-  --corPrincipal: #161616;   /* Preto suave - fundo e textos principais */
-  --corSecundaria: #8B1E3F;  /* Vermelho bordô - botões, títulos, destaques */
-  --corTerciaria: #6B4C3B;   /* Marrom café - cartões e bordas */
-  --corBase: #FAF6F2;        /* Creme - fundo claro ou contraste */
+  --color-primary: #F59E0B;   /* Amarelo queimado */
+  --color-secondary: #B45309; /* Laranja terroso */
+  --color-dark: #1C1C1C;      /* Preto profundo */
+  --color-bg: #FFF9F0;        /* Fundo claro */
+  --color-accent: #D97706;    /* Laranja vibrante */
+  --color-contrast: #FFE6A7;  /* Amarelo suave */
+
+  /* 🎨 Tipografia e efeitos */
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --radius: 12px;
+  --transition: 0.4s ease-in-out;
+  --shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--corPrincipal);
-  color: var(--corBase);
-  min-height: 100vh;
-  padding: 20px;
+/* 🌿 Estilos Globais */
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ===== Introdução ===== */
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 2rem;
+  background: linear-gradient(180deg, #FFF9F0 0%, #FFF3D6 100%);
+}
+
+.introSection {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 4rem auto;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.introText {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+/* ===== Cards das Campanhas ===== */
+.cardsSection {
+  text-align: center;
+}
+
+.total {
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
   justify-content: center;
-  padding: 20px;
+  padding: 1rem 0;
 }
 
 .card {
-  background-color: var(--corTerciaria);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: var(--corBase);
+  background: var(--color-dark);
+  color: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), background-color var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  background-color: var(--color-secondary);
+  border-color: var(--color-accent);
+}
+
+.imagePlaceholder {
+  background: var(--color-contrast);
+  color: var(--color-dark);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .title {
-  color: var(--corSecundaria);
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .description {
-  font-size: 14px;
-  margin: 8px 0;
-  color: var(--corBase);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
 }
 
-.year {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--corSecundaria);
+.estado,
+.data {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
-.impact {
-  font-size: 13px;
-  color: var(--corBase);
-}
-
-.loading {
+/* ===== Loader ===== */
+.loaderContainer {
   text-align: center;
-  font-size: 16px;
-  color: var(--corSecundaria);
+  padding: 3rem;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+/* ===== Dados IBGE ===== */
+.infoSection {
+  background-color: var(--color-dark);
+  color: var(--color-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  margin-top: 3rem;
+  box-shadow: var(--shadow);
+}
+
+.infoSection h2 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.infoSection ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 1rem auto;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.infoSection li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Importância ===== */
+.importanciaSection {
+  background: linear-gradient(180deg, var(--color-bg) 0%, #FFEFD3 100%);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  margin-top: 3rem;
+  box-shadow: var(--shadow);
+}
+
+.importanciaSection h2 {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.importanciaSection p {
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .introText,
+  .description,
+  .importanciaSection p {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoSection,
+  .importanciaSection {
+    padding: 1.5rem;
+  }
+}
+
+/* ===== Animações ===== */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
