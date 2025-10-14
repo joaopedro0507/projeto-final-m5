@@ -20,7 +20,7 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(160deg, #1C1A17 80%, #241510);
+  background:  #131212;
 }
 
 /* Fundo com brilhos sutis */
@@ -145,10 +145,21 @@
   backdrop-filter: blur(10px);
 }
 
-.loading {
-  color: var(--corBase);
-  background: rgba(40, 40, 40, 0.75);
-  border: 1px solid var(--corSecundaria);
+.loader {
+  border: 5px solid rgba(250, 246, 242, 0.2); /* cor suave do contorno */
+  border-top: 5px solid var(--corSecundaria); /* cor vibrante da rotação */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+/* animação de rotação */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error {
