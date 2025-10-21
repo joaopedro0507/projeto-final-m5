@@ -1,4 +1,5 @@
 import './App.css';
+import Hero from "./components/Hero/Hero.jsx"
 import Menu from "./components/Menu/Menu.jsx";
 import Campanha from "./components/Campanha/Campanha.jsx";
 import Denuncia from "./components/Denuncia/Denuncia.jsx";
@@ -8,6 +9,7 @@ import Footer from "./components/Footer/Footer.jsx"; // 👈 Importa o Footer
 function App() {
   return (
     <>
+      <Hero />
       <Menu />
       <Sobre />
       <Denuncia />
